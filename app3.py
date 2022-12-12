@@ -4,7 +4,16 @@ import streamlit as st
 import pandas as pd
 
 def main():
-    pass
+
+    st.title('아이리스 꽃 데이터')
+
+    df= pd.read_csv('streamlit_data/iris.csv')
+
+    st.dataframe(df)
+
+    species = df['species'].unique()
+
+    st.text('아이리스 꽃은 '+ species+ ' 으로 되어있다.')
 
 if __name__ == '__main__':
     main()
